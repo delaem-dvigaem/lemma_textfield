@@ -14,5 +14,5 @@ and the Flutter guide for
 ## Установка
 
 ```dart
-conflutter pub add lemma_textfield
+flutter pub add lemma_textfield
 ```
