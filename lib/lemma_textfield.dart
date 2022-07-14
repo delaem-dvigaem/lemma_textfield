@@ -78,11 +78,14 @@ class _LemmaTextFieldState extends State<LemmaTextField> {
   @override
   Widget build(BuildContext context) {
     return Focus(
-        onKey: (node, event) {
-          if (event.character != ' ' && event.character != null) {
+        onKeyEvent: (node, event) {
+          if (event.character != ' ' &&
+              event.character != null &&
+              event.logicalKey.keyLabel != 'Backspace') {
             addCharacter(event.character);
           }
-          if (event.character == ' ') {
+          if (event.character == ' ' &&
+              event.logicalKey.keyLabel != 'Backspace') {
             addCharacter(event.character);
           }
           if (event.logicalKey.keyLabel == 'Backspace') {
